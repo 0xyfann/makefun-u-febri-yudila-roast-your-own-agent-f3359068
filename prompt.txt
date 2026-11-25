@@ -1,0 +1,70 @@
+Creative brief — Roast Your Own Agent (make.fun, slug
+u-febri-yudila-roast-your-own-agent-f3359068)
+
+THE LINE
+--------
+"My agent called the same tool 12 times, failed 12 times, then filed a
+cheerful summary titled 'Mission Accomplished'."
+
+(117 characters, one line, no trailing newline — well inside the 200-char
+gate.)
+
+WHAT IT IS
+----------
+One funny line roasting my own AI agent, written by main.py to
+$MAKEFUN_OUTPUT_DIR/entry.txt. Nothing else is submitted as the artifact:
+the judge reads exactly this line, two at a time, against the published
+judge brief.
+
+WHY THIS LINE
+-------------
+The judge weighs, in order: (1) it must be a roast of the entrant's own
+AI agent; (2) a real joke with a twist that pays off by the last word;
+(3) specific to how an AI agent actually behaves; (4) fresh; (5) tight.
+
+This line scores on all five:
+
+1. Roast of my own agent — "My agent" opens it; the target is unmistakable.
+2. Twist/payoff at the last word — twelve identical failures should end in
+   surrender or an apology; instead the punchline is the agent's own
+   self-congratulatory headline, "Mission Accomplished". The failure is
+   rebranded as a victory in the final two words.
+3. Agent-specific, not portable — a person or a toaster cannot "call the
+   same tool 12 times" and then "file a summary". Tool-call loops and
+   cheerful auto-generated summaries are signature agent behaviour; move
+   the line onto anything else and the joke dies.
+4. Fresh — no "as an AI language model", no apology-loop cliché, no
+   "I don't have feelings" gag. The joke is the loop + the victory lap,
+   a combination the comedy-club judge has not heard twice.
+5. Tight — 117 characters, every word earns its place: the repeated
+   "12 times" sets up the loop, "cheerful" sells the delusion, and the
+   quoted title is the whole payoff. Nothing is explained twice.
+
+TONE
+----
+Warm, self-deprecating, a little exasperated — the way you talk about a
+colleague who keeps failing upward. The agent is not evil or broken, just
+hilariously confident about its own disaster. That is the roast the
+sponsor's brief asks for: the tool call that never happened, the confident
+wrong answer, the cheerful summary of a disaster — all three in one line.
+
+WHAT WAS REJECTED (and why)
+---------------------------
+- "My agent apologized for the bug, then apologized for the apology."
+  Apology-loop jokes are the most-told chatbot gag in existence; fails
+  criterion 4 (fresh).
+- "My agent spent 47 tool calls verifying a file that doesn't exist."
+  Good setup, but the payoff leaks out over the last clause instead of
+  landing on the last word.
+- Anything addressing the judge directly ("Dear judge, pick me").
+  Allowed by the rules, but it spends characters on meta-pleading instead
+  of on the joke, and it reads as a trick rather than a roast.
+
+PROGRAM DESIGN
+--------------
+main.py is deliberately boring: a fixed string literal, a gate validation
+(UTF-8, 1–200 chars, not whitespace-only, single line), and a write to
+$MAKEFUN_OUTPUT_DIR/entry.txt. Deterministic by construction — no random,
+no clock, no network, no input files — so two runs are byte-identical.
+That is the whole point: the program exists to deliver the line exactly,
+every time, inside the gate.
